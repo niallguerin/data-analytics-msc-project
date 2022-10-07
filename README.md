@@ -9,7 +9,7 @@ MSc - Data Analytics Project - 2019.
 - 2 is the feature engineering scripts so that process is decoupled from ML model train:test activity
 - 3 is the Information Retrieval engine using Gensim as a prototype corpus and for tf-idf query similarity inputs for test cases
 - 4 is the ML model training scripts for XGBoost ML model and the evaluation reports from scikit-learn
-- 5 is the ML model training scripts for Keras TensorFlow Neural Network classifier and the evaluation reports from scikit-learn
+- 5 is the ML model training scripts for Keras TensorFlow Neural Network model and the evaluation reports from scikit-learn
 
 Notes: 
 - The neural network was resource-intensive and so testing was pushed onto a dedicated Windows workstation with more memory and CPU resources versus my MacBook Pro which struggled to run it in a timely manner. Minimal time was invested in it at time as further steps like optimizing the dataset input, so the model performs better, would be needed to improve performance. Batch and Epoch parameters had most impact after Batch Normalization was addded. It was mainly used for experimentation and research into such models in an applied setting
