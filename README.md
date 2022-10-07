@@ -1,8 +1,9 @@
 ## data-analytics-msc-project
 MSc - Data Analytics Project - 2019.
 
-- Reviewed and re-tested in PyCharm October 2022
-- Added bug fixes for deprecated methods TensorFlow and XGBoost code sections
+## Change Log
+- Reviewed and re-tested in PyCharm October 2022 (env = Python 3.7) 
+- Added bug fixes for deprecated methods in TensorFlow and XGBoost imported library function call sections
 
 ## Directory and Code Summary
 - 1 is the data staging directory scripts based on Calefato research paper and updates I applied on my local MySQL DB afterwards
@@ -10,7 +11,7 @@ MSc - Data Analytics Project - 2019.
 - 3 is the Information Retrieval engine using Gensim as a prototype corpus and for tf-idf query similarity inputs for test cases
 - 4 is the ML model training scripts for XGBoost ML model and the evaluation reports from scikit-learn
 - 5 is the ML model training scripts for Keras TensorFlow Neural Network model and the evaluation reports from scikit-learn
-- README.pdf is the instructions for data staging, file splitter utilities for Mac and Windows for CSV file chunking, and workflow summary for code
+- README.pdf is the instructions for data staging, file splitter utilities for Mac and Windows for CSV file chunking, and workflow summary for Python code script pipelines as they can be run without the IR module or end-to-end with it as this was created back in 2019 with view to modularizing it hence why it is not just a single large code file in a Jupyter Notebook
 
 ## Workflow Summary
 1. The data from MySQL is chunked using two splitter tools; one for Mac OSX and one for Windows. The files can be configured to various input dataframe sizes via Python/Pandas as required.
@@ -50,11 +51,12 @@ The empirical research by Calefato and his team showed it was possible based on 
 
 The goal of the thesis is to implement a working pipeline the merges the techniques from both research papers, in particular leveraging the feature engineering and optimal algorithm findings from Calefato. rather than randomly picking an ML algorithm, to build an end-to-end pipeline from query input to retrieval of relevant result set to using the ML model to identify the best answer snippet as the final step.
 
-I am trying to integrate two research paper methodologies, with a simplified information retrieval system in this implementation due to time constraints.
+I was trying to integrate two research paper methodologies in this project, with a very simplified information retrieval system in this implementation due to time constraints.
 
-I wanted to use more traditional approaches first on this iteration before experimenting with what are more complex approaches methods like BERT and other architectures which were coming online in recent years. And today, we have many pre-trained models on that SO dataset from HuggingFace and other ML model providers, which are candidates for further evaluation.
+## Remark October 2022
+I wanted to use more traditional ML model approaches first on this prototype project in 2019 before experimenting with what are more complex approaches methods like BERT (2018) and other architectures which were coming online in recent years.
 
-As of October 2022, I am now working on a modularized system, building on this and the earlier information tools projects and designed for my own personal use as I am best able to assess whether it works for me as the end user and it provides a test area to apply the lessons learned in various online ML courses and labs.
+Today there are other ML models (pre-trained from e.g. [HuggingFace](https://huggingface.co/tasks/question-answering)) dedicated solely to performing use case support on the SO dataset, so keep this in mind with options available if you are interested in performing offline work with the SO dataset as you have to work with the dataset yourself per [HuggingFace SO dataset sample remarks](https://huggingface.co/datasets/so_stacksample) and the guidelines from Stack Overflow on their public dataset download.
 
 ### Primary References
 F. Calefato, F. Lanubile, and N. Novielli (2018) [“An Empirical Assessment of Best-Answer Prediction Models in Technical Q&A Sites.](https://collab.di.uniba.it/fabio/wp-content/uploads/sites/5/2018/07/EMSE-D-17-00159_R3.compressed.pdf)” Empirical Software Engineering Journal, DOI: 10.1007/s10664-018-9642-5
