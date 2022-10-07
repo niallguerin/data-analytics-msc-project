@@ -4,6 +4,18 @@ MSc - Data Analytics Project - 2019.
 - Reviewed and re-tested in PyCharm October 2022
 - Added bug fixes for deprecated methods TensorFlow and XGBoost code sections
 
+## Directory and Code Summary
+- 1 is the data staging directory scripts based on Calefato research paper and updates I applied on my local MySQL DB afterwards
+- 2 is the feature engineering scripts so that process is decoupled from ML model train:test activity
+- 3 is the Information Retrieval engine using Gensim as a prototype corpus and for tf-idf query similarity inputs for test cases
+- 4 is the ML model training scripts for XGBoost ML model and the evaluation reports from scikit-learn
+- 5 is the ML model training scripts for Keras TensorFlow Neural Network classifier and the evaluation reports from scikit-learn
+
+Notes: 
+- The neural network was resource-intensive and so testing was pushed onto a dedicated Windows workstation with more memory and CPU resources versus my MacBook Pro which struggled to run it in a timely manner. Minimal time was invested in it at time as further steps like optimizing the dataset input, so the model performs better, would be needed to improve performance. Batch and Epoch parameters had most impact after Batch Normalization was addded. It was mainly used for experimentation and research into such models in an applied setting
+- Dataset inputs were tested across a range of sample sizes from the original 67GB export - 1K, 20K, 100K, 1 million, 3 million records. Note the entire dataset in MySQL when I staged it was about 27 million records from a 67GB source input dataset
+- My dataset is not the same as one [here](https://github.com/collab-uniba/emse_best-answer-prediction) as I took my snapshot over 2 years later from Stack Overflow public dataset downloads. You should read their paper and do your own walkthrough in R to understand the approach they used for evaluation
+
 ## Goal
 The aim of the research project and prototype was to build on a static Information Retrieval (IR) system I created for myself to assist me on customer implementation projects in the IT domain back in 2015 and use the tools and techniques from the course and a personal interest in technical Question and Answering systems to provide a feasible workflow for future open source development projects that I can develop for personal use or as open source projects to assist me or colleagues in work settings.
 
@@ -31,21 +43,18 @@ The goal of the thesis is to implement a working pipeline the merges the techniq
 
 I am trying to integrate two research paper methodologies, with a simplified information retrieval system in this implementation due to time constraints.
 
-I wanted to use more traditional approaches first on this iteration before experimenting with what are more complex approaches methods like BERT from modern question answering system research field. I can learn from the findings and limitations in this project but as one of the RQs is to look at performance and feasibility of running this as a personal project on a future basis on a laptop versus costly cloud servers for ML training or complex architectures, this is an important for me to keep in mind in terms of choosing implementation strategies for the integrated workflow approach in my own system projects.
+I wanted to use more traditional approaches first on this iteration before experimenting with what are more complex approaches methods like BERT and other architectures which were coming online in recent years. And today, we have many pre-trained models on that SO dataset from HuggingFace and other ML model providers, which are candidates for further evaluation.
 
-As of October 2022, I am now working on a modularized system designed for my own personal use as I am best able to assess whether it works for me as the end user and it provides a test area to apply the lessons learned in various online ML courses and labs.
+As of October 2022, I am now working on a modularized system, building on this and the earlier information tools projects and designed for my own personal use as I am best able to assess whether it works for me as the end user and it provides a test area to apply the lessons learned in various online ML courses and labs.
 
 ### Primary References
-F. Calefato, F. Lanubile, and N. Novielli (2018) “An Empirical Assessment of Best-Answer Prediction Models in Technical Q&A Sites.” Empirical Software Engineering Journal, DOI: 10.1007/s10664-018-9642-5
+F. Calefato, F. Lanubile, and N. Novielli (2018) [“An Empirical Assessment of Best-Answer Prediction Models in Technical Q&A Sites.](https://collab.di.uniba.it/fabio/wp-content/uploads/sites/5/2018/07/EMSE-D-17-00159_R3.compressed.pdf)” Empirical Software Engineering Journal, DOI: 10.1007/s10664-018-9642-5
 
-The Calefato (2018) paper does empirical evaluation of comprehensive list of ML algorithms and suggests using that knowledge to help build solutions for CQA platforms.
-They are not aiming to show an integrated workflow, rather a very useful methodology for how one could use their findings to build an integrated solution as they highlight
-in their own conclusions, so this is my explicit goal here which attempts to leverage the insights from their findings
+The Calefato (2018) paper does empirical evaluation of comprehensive list of ML algorithms and suggests using that knowledge to help build solutions for CQA platforms. They are not aiming to show an integrated workflow, rather a very useful methodology for how one could use their findings to build an integrated solution as they highlight in their own conclusions, so this is my explicit goal here which attempts to leverage the insights from their findings as they have already identified optimal ML algorithms (keeping in mind it was 2017)
 
-Greco C., Haden T., & Damevski K., (2018), StackInTheFlow: Behavior-Driven Recommendation System for Stack Overflow Posts. 2018 ACM/IEEE 40th International Conference on Software Engineering: Companion Proceedings
+Greco C., Haden T., & Damevski K., (2018), [StackInTheFlow](https://github.com/vcu-swim-lab/stack-intheflow): Behavior-Driven Recommendation System for Stack Overflow Posts. 2018 ACM/IEEE 40th International Conference on Software Engineering: Companion Proceedings
 
-The research paper for the SITF tool created by Damevski and his team shows a context-sensitive personalized recommender system. While it uses only Stack Overflow and integrates with the Stack Overflow API,
-it shows a finished working-in-the-field tool, integrated into a context-driven environment (for code as they were focusing on IDE and developer assistant tasks).
+The research paper for the SITF tool created by Damevski and his team shows a context-sensitive personalized recommender system. While it uses only Stack Overflow and integrates with the Stack Overflow API, it shows a finished working-in-the-field tool, integrated into a context-driven environment (for code as they were focusing on IDE and developer assistant tasks).
 
 ### Additional References
 Aggarwal, C., (2016), Recommender Systems (eBook)
