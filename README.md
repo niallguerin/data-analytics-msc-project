@@ -53,8 +53,7 @@ The goal of the thesis is to implement a working pipeline the merges the techniq
 
 I was trying to integrate two research paper methodologies in this project, with a very simplified information retrieval system in this implementation due to time constraints.
 
-## Remark October 2022
-I wanted to use more traditional ML model approaches first on this prototype project in 2019 before experimenting with what are more complex approaches methods like BERT (2018) and other architectures which were coming online in recent years.
+At the time in 2019, I wanted to use more traditional ML model approaches, based on theory and fundamentals from the course when developing this prototype project, before experimenting with what are more complex methods like BERT (2018) and other architectures which were coming online in recent years.
 
 Today there are other ML models (pre-trained from e.g. [HuggingFace](https://huggingface.co/tasks/question-answering)) dedicated solely to performing use case support on the SO dataset, so keep this in mind with options available if you are interested in performing offline work with the SO dataset as you have to work with the dataset yourself per [HuggingFace SO dataset sample remarks](https://huggingface.co/datasets/so_stacksample) and the guidelines from Stack Overflow on their public dataset download.
 
