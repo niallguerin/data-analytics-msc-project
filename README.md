@@ -1,5 +1,8 @@
 ## data-analytics-msc-project
-MSc - Data Analytics Project - 2019 - Reviewed and imported library bug fixes implemented in September and October 2022 for TensorFlow and XGBoost code sections.
+MSc - Data Analytics Project - 2019.
+
+- Reviewed and re-tested in PyCharm October 2022
+- Added bug fixes for deprecated methods TensorFlow and XGBoost code sections
 
 ## Goal
 The aim of the research project and prototype was to build on a static Information Retrieval (IR) system I created for myself to assist me on customer implementation projects in the IT domain back in 2015 and use the tools and techniques from the course and a personal interest in technical Question and Answering systems to provide a feasible workflow for future open source development projects that I can develop for personal use or as open source projects to assist me or colleagues in work settings.
