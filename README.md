@@ -5,6 +5,10 @@ MSc - Data Analytics Project - 2019.
 - Reviewed and re-tested in PyCharm October 2022 (env = Python 3.7) 
 - Added bug fixes for deprecated methods in TensorFlow and XGBoost imported library function call sections
 
+## Dataset Downloads
+- [Stack Exchange Dataset Download from Internet Archive](https://archive.org/details/stackexchange)
+- [Stack Exchange Dataset Blog from Internet Archive](https://stackoverflow.blog/2014/01/23/stack-exchange-cc-data-now-hosted-by-the-internet-archive/?_ga=2.36385504.11393660.1665309316-153577822.1660855372)
+
 ## Directory and Code Summary
 - 1 is the data staging directory scripts based on Calefato research paper and updates I applied on my local MySQL DB afterwards
 - 2 is the feature engineering scripts so that process is decoupled from ML model train:test activity
