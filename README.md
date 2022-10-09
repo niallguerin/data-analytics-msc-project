@@ -22,6 +22,8 @@ MSc - Data Analytics Project - 2019.
 6. A snippet is produced in the CLI with link to the web resource from Stack Overflow using a correlation function between Question ID and Answer ID.
 
 ## Notes: 
+- The dataset files and pipeline preprocessing stages on the dataset are not uploaded to GitHub as the staging files are GB in size.
+- The processed dataset files and even chunked files can range into the hundreds of MB too, so they are not uploaded here either as too large.
 - The neural network was resource-intensive and so testing was pushed onto a dedicated Windows workstation with more memory and CPU resources versus my MacBook Pro which struggled to run it in a timely manner. Minimal time was invested in 2019 as further steps like optimizing the dataset input, so the model performs better, would be needed to improve performance. Batch and Epoch parameters had most impact after Batch Normalization was addded. It was mainly used for artificial neural network prototyping and experimentation and research into such models in an applied setting
 - Dataset inputs were tested across a range of sample sizes from the original 67GB export - 1K, 20K, 100K, 1 million, 3 million records. Note the entire dataset in MySQL when I staged it was about 27 million records from a 67GB source input dataset
 - My dataset is not the same as one [here](https://github.com/collab-uniba/emse_best-answer-prediction) as I took my snapshot over 2 years later from Stack Overflow public dataset downloads. You should read their paper and do your own walkthrough in R to understand the approach they used for evaluation
