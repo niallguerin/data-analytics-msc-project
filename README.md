@@ -72,7 +72,9 @@ Greco C., Haden T., & Damevski K., (2018), [StackInTheFlow](https://github.com/v
 
 The research paper for the SITF tool created by Damevski and his team shows a context-sensitive personalized recommender system. While it uses only Stack Overflow and integrates with the Stack Overflow API, it shows a finished working-in-the-field tool, integrated into a context-driven environment (for code as they were focusing on IDE and developer assistant tasks).
 
-[vendelligence web application](https://github.com/niallguerin/vendelligence-webapp-personal)
+My own GitHub project.[vendelligence web application](https://github.com/niallguerin/vendelligence-webapp-personal)
+
+The thesis project aimed to prototype a replacement for vendelligence and the information retrieval layer in that system relying on the paid-for Google CSE API which was a third-party cloud service. In addition, it tried to introduce a Question-Answer automation layer evaluating two ML model algorithms.
 
 ### Additional References
 Aggarwal, C., (2016), Recommender Systems (eBook)
