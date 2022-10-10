@@ -1,5 +1,5 @@
 ## data-analytics-msc-project
-MSc - Data Analytics Project - 2019.
+MSc - Data Analytics Project - 2019. This project was a prototype and research exercise to assess if I could decouple the original vendelligence application I had built in 2015-2016 from the Google CSE API and build an information management solution independent of paid-for APIs. Gensim was chosen as the open source solution to build the information retrieval module from the Stack Overflow public dataset. The second part of the project was to evaluate two ML algorithms of choice (XGBoost classifier, Keras TensorFlow Neural Network classifier) and assess their performance using standard ML metrics on identifying the best answer from the resultset list it had received from the Gensim IR module and if it was acceptable to me as an end user.
 
 ## Change Log
 - Reviewed and re-tested in PyCharm October 2022 (env = Python 3.7) 
