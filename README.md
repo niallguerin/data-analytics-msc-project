@@ -1,7 +1,7 @@
 ## data-analytics-msc-project
 MSc - Data Analytics Project - 2019. This project was a prototype and research exercise to assess if I could decouple the original vendelligence application I had built in 2015-2016 from the Google CSE API and build an information management solution independent of paid-for APIs. Gensim was chosen as the open source solution to build the information retrieval module from the Stack Overflow public dataset. The second part of the project was to evaluate two ML algorithms of choice (XGBoost classifier, Keras TensorFlow Neural Network classifier) and assess their performance using standard ML metrics on identifying the best answer from the resultset list it had received from the Gensim IR module and if it was acceptable to me as an end user.
 
-This project was from August 2019
+This project was from August 2019 for my university project.
 
 ## Change Log
 - Reviewed and re-tested in PyCharm October 2022 (env = Python 3.7) 
@@ -13,7 +13,7 @@ This project was from August 2019
 
 ## Directory and Code Summary
 - 1 is the data staging directory scripts based on Calefato research paper and updates I applied on my local MySQL DB afterwards
-- 2 is the feature engineering scripts so that process is decoupled from ML model train:test activity. Features are predefined based on research paper in Primary Reference as they used Boruta package in R as part of their original SO dataset feature analysis phase to avoid redundant features
+- 2 is the feature engineering scripts so that process is decoupled from ML model train:test activity. Features are predefined based on research paper in Primary Reference as they used [Boruta package in R](https://www.rdocumentation.org/packages/Boruta/versions/7.0.0/topics/Boruta) as part of their original SO dataset feature analysis phase to avoid redundant features
 - 3 is the Information Retrieval engine using Gensim as a prototype corpus and for tf-idf query similarity inputs for test cases
 - 4 is the ML model training scripts for XGBoost ML model and the evaluation reports from scikit-learn
 - 5 is the ML model training scripts for Keras TensorFlow Neural Network model and the evaluation reports from scikit-learn
@@ -35,9 +35,9 @@ This project was from August 2019
 - My dataset is not the same as one [here](https://github.com/collab-uniba/emse_best-answer-prediction) as I took my snapshot over 2 years later from Stack Overflow public dataset downloads. You should read their paper and do your own walkthrough in R to understand the approach they used for evaluation
 
 ## Goal
-The aim of the research project and prototype was to build on a static Information Retrieval (IR) system I created for myself to assist me on customer implementation projects in the IT domain back in 2015-2016 called Vendelligence. The thesis project aimed to use the tools and techniques from the MSc in Data Analytics course and a personal interest in technical Question and Answering systems to provide a feasible workflow for future open source development projects that I can develop for personal use and share if anybody else finds it useful in their own work setting.
+The aim of the MSc research project and prototype was to build on a static Information Retrieval (IR) system I created for myself to assist me on customer implementation projects in the IT domain back in 2015-2016 called Vendelligence. The MSc project aimed to use the tools and techniques from the MSc in Data Analytics course and a personal interest in technical Question and Answering systems to provide a feasible workflow for future open source development projects that I can develop for personal use and share if anybody else finds it useful in their own work setting.
 
-This project focuses on Information Retrieval (IR) and filtering techniques built from scratch using Python scripts and the [Gensim](https://radimrehurek.com/gensim/)  open source library to construct an offline corpus from the staged SO dataset in MySQL. The research paper by Calefato used R and the Boruta R package to automate feature analysis and eliminate redundant features. This allowed me to focus on the useful features from the dataset and constructing an end-to-end workflow and IR and ML pipeline to product a prototype application for search and answer prediction in one system and decouple my earlier system from a dependency on the Google CSE API (and associated fees).
+This project focuses on Information Retrieval (IR) and filtering techniques built from scratch using Python scripts and the [Gensim](https://radimrehurek.com/gensim/)  open source library to construct an offline corpus from the staged SO dataset which I loaded into an offline MySQL database on local workstations. The research paper by Calefato used R and the Boruta R package to automate feature analysis and eliminate redundant features. This allowed me to focus on the useful features from the dataset and constructing an end-to-end workflow and IR and ML pipeline to product a prototype application for search and answer prediction in one system and decouple my earlier system from a dependency on the Google CSE API (and associated fees).
 
 At the time in 2019, I wanted to use more classical ML model approaches and evaluate algorithms that fell within the range of top-performing algorithms identified by Calefato et al. and not go diving into the latest barely-off-the-shelf framework.
 
