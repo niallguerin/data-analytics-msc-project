@@ -5,7 +5,7 @@ The goal here was to build an information management prototype independent of pa
 
 The SO dataset was processed and staged into My SQL using SQL scripts from this [GitHub project](https://github.com/collab-uniba/emse_best-answer-prediction). Refer to Primary Reference literature review papers below for their research paper and citation.
 
-I added additional SQL scripts for information retrieval query comparison tests to check question-answer IDs in the overall SO dataset to facilitate chunked information extraction later to ensure input queries were actually in the CSV datasets before building the corpus in Gensim and before running train:test so holdout sets were manually built, and not only relied on the percentage holdout parameter in the machine learning model training code.
+I added additional SQL scripts for information retrieval query comparison tests to check question-answer IDs in the overall SO dataset. This was done to facilitate chunked information extraction and ensure input queries were actually in the CSV datasets before building the corpus in Gensim. It also helped with train:test ML model training as we end up with manually held-out datasets of conrollable size from the entire SO dataset.
 
 Feature analysis was based on the primary paper in the literature review as they used the Boruta package in R to automate feature detection. I performed my own independent test cases of feature reduction after familiarising myself with the dataset which dropped a number of those features and still saw good performance using XGBoost algorithm.
 
