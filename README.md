@@ -1,11 +1,24 @@
 ## data-analytics-msc-project
-MSc - Data Analytics Project - 2019. This project was a prototype and research exercise to assess if I could decouple the original vendelligence application I had built in 2015-2016 from the Google CSE API and build an information management solution independent of paid-for APIs. Gensim was chosen as the open source solution to build the information retrieval module from the Stack Overflow public dataset. The second part of the project was to evaluate two ML algorithms of choice (XGBoost classifier, Keras TensorFlow Neural Network classifier) and assess their performance using standard ML metrics on identifying the best answer from the resultset list it had received from the Gensim IR module and if it was acceptable to me as an end user.
+MSc - Data Analytics Project from 2019. This project was a prototype and research exercise to assess if I could decouple my original [vendelligence](https://github.com/niallguerin/vendelligence-webapp-personal) information retrieval application from the Google CSE API it was reliant on.
 
-This project was from August 2019 for my university project.
+The goal here was to build an information management prototype independent of paid-for APIs for both search and machine learning functionality. Vendelligence was missing best answer prediction support, so you had to still rely on filters to wade through results. This prototype added an ML layer to pinpoint single best answers from a search resultset.
+
+The SO dataset was processed and staged into My SQL using SQL scripts from this [GitHub project](https://github.com/collab-uniba/emse_best-answer-prediction). Refer to Primary Reference literature review papers below for their research paper and citation.
+
+I added additional SQL scripts for information retrieval query comparison tests to check question-answer IDs in the overall SO dataset to facilitate chunked information extraction later to ensure input queries were actually in the CSV datasets before building the corpus in Gensim and before running train:test so holdout sets were manually built, and not only relied on the percentage holdout parameter in the machine learning model training code.
+
+Feature analysis was based on the primary paper in the literature review as they used the Boruta package in R to automate feature detection. I performed my own independent test cases of feature reduction after familiarising myself with the dataset which dropped a number of those features and still saw good performance using XGBoost algorithm.
+
+Using file splitter utilities from the My SQL DB data exports to file system, Gensim was used to reconstruct the corpus in [Gensim](https://radimrehurek.com/gensim/) file format. This supported NLP functionality and query similarity searching against input query test cases, using tf-idf in case of this project. Gensim supports multiple other options beyond tf-idf e.g. [Latent Semantic Indexing](https://en.wikipedia.org/wiki/Latent_semantic_analysis).
+
+Two ML algorithms were chosen for the machine learning answer prediction module based on the top-performing list of algorithms identified in the Primary Reference research paper below although I then choose my own preference for implementation: sklearn XGBoost and Keras neural network. The ML module prototype focuses on performance evaluation of both ML algorithms against the Gensim query search resultsets, which act as a filter layer before passing to the best answer prediction layer.
+
+Finally, a simple (and buggy) command-line snippet tool is included that provides the user with the response in weblink format, so answer is opened in their web browser from the Python console.
 
 ## Change Log
 - Reviewed and re-tested in PyCharm October 2022 (env = Python 3.7) 
 - Added bug fixes for deprecated methods in TensorFlow and XGBoost imported library function call sections
+- Trimmed README file
 
 ## Dataset Downloads
 - [Stack Exchange Dataset Download from Internet Archive](https://archive.org/details/stackexchange)
@@ -34,14 +47,10 @@ This project was from August 2019 for my university project.
 - Dataset inputs were tested across a range of sample sizes from the original 67GB export - 1K, 20K, 100K, 1 million, 3 million records. Note the entire dataset in MySQL when I staged it was about 27 million records from a 67GB source input dataset
 - My dataset is not the same as one [here](https://github.com/collab-uniba/emse_best-answer-prediction) as I took my snapshot over 2 years later from Stack Overflow public dataset downloads. You should read their paper and do your own walkthrough in R to understand the approach they used for evaluation
 
-## Goal
-The aim of the MSc research project and prototype was to build on a static Information Retrieval (IR) system I created for myself to assist me on customer implementation projects in the IT domain back in 2015-2016 called Vendelligence. The MSc project aimed to use the tools and techniques from the MSc in Data Analytics course and a personal interest in technical Question and Answering systems to provide a feasible workflow for future open source development projects that I can develop for personal use and share if anybody else finds it useful in their own work setting.
-
-This project focuses on Information Retrieval (IR) and filtering techniques built from scratch using Python scripts and the [Gensim](https://radimrehurek.com/gensim/)  open source library to construct an offline corpus from the staged SO dataset which I loaded into an offline MySQL database on local workstations. The research paper by Calefato used R and the Boruta R package to automate feature analysis and eliminate redundant features. This allowed me to focus on the useful features from the dataset and constructing an end-to-end workflow and IR and ML pipeline to create a prototype application for search and answer prediction in one system and decouple my earlier system from a dependency on the Google CSE API (and associated fees).
-
-At the time in 2019, I wanted to use more classical ML model approaches and evaluate algorithms that fell within the range of top-performing algorithms identified by Calefato et al. and not go diving into the latest barely-off-the-shelf framework.
-
+## Comment in 2022
 Today there are other ML models (pre-trained from e.g. [HuggingFace](https://huggingface.co/tasks/question-answering)) dedicated solely to performing use case support on the SO dataset e.g. [HuggingFace SO dataset sample remarks](https://huggingface.co/datasets/so_stacksample). There are other Question Answering pre-trained models from likes of [OpenAI for Question Answering](https://beta.openai.com/docs/guides/answers), which can also be used for standalone question answering module, but keep in mind their [pricing](https://openai.com/api/pricing/) if you want to analyze larger data volumes.
+
+Based on lessons learned from this project, in particular the hardware performance bottlenecks and ML model under-performance encountered with the Keras neural network after limited dataset preprocessing was done for that ML model, my focus has shifted to dataset statistical analysis tools and libraries, feature analysis, and open source projects and platforms that support that task.
 
 ### Primary References
 F. Calefato, F. Lanubile, and N. Novielli (2018) [“An Empirical Assessment of Best-Answer Prediction Models in Technical Q&A Sites.](https://collab.di.uniba.it/fabio/wp-content/uploads/sites/5/2018/07/EMSE-D-17-00159_R3.compressed.pdf)” Empirical Software Engineering Journal, DOI: 10.1007/s10664-018-9642-5
